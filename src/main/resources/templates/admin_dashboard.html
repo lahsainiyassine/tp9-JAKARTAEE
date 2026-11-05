@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Espace Administrateur - Spring Security</title>
+    <link rel="stylesheet" th:href="@{'/css/style.css'}">
+</head>
+<body>
+    <div class="container">
+        <h2>Bienvenue dans l'Espace Administrateur</h2>
+        <p>Cette page est accessible aux utilisateurs ayant le rôle ADMIN.</p>
+        <p>Connecté en tant que : <strong sec:authentication="name">Admin</strong></p>
+        <p>Rôles attribués : <span sec:authentication="principal.authorities"></span></p>
+        <p><a th:href="@{'/user/dashboard'}">Accéder également à l'Espace Utilisateur</a></p>
+        <p><a th:href="@{'/'}">Retour à l'accueil</a></p>
+        <form th:action="@{'/logout'}" method="post">
+            <button type="submit">Se déconnecter</button>
+        </form>
+    </div>
+</body>
+</html>

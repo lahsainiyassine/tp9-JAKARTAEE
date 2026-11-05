@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Espace Utilisateur - Spring Security</title>
+    <link rel="stylesheet" th:href="@{'/css/style.css'}">
+</head>
+<body>
+    <div class="container">
+        <h2>Bienvenue dans l'Espace Utilisateur</h2>
+        <p>Cette page est accessible aux utilisateurs ayant le rôle USER.</p>
+        <p>Connecté en tant que : <strong sec:authentication="name">Utilisateur</strong></p>
+        <p>Rôles attribués : <span sec:authentication="principal.authorities"></span></p>
+        <p><a th:href="@{'/'}">Retour à l'accueil</a></p>
+        <form th:action="@{'/logout'}" method="post">
+            <button type="submit">Se déconnecter</button>
+        </form>
+    </div>
+</body>
+</html>

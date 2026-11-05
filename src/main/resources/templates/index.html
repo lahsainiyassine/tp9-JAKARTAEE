@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil - Spring Security</title>
+    <link rel="stylesheet" th:href="@{'/css/style.css'}">
+</head>
+<body>
+    <div class="container">
+        <h2>Bienvenue sur l'application publique</h2>
+        <p><a th:href="@{'/user/dashboard'}">Espace Utilisateur</a></p>
+        <p><a th:href="@{'/admin/dashboard'}">Espace Administrateur</a></p>
+    </div>
+</body>
+</html>
